@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployments
+kind: Deployment
 metadata:
   name: my-node-deployment
 spec:
@@ -18,6 +18,6 @@ spec:
         resources:
           limits:
             memory: "128Mi"
-            cpy: "500m"
+            cpu: "500m"
         ports:
         - containerPort: 8080
