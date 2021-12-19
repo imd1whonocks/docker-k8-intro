@@ -26,6 +26,7 @@ app.post('/post', (req, res) => {
 app.get('/crash', (req, res) => {
     res.sendFile(path.join(__dirname, 'public' ,'/crashed.html'));
     setTimeout(() => {
+        console.error('Something bad happening')
         process.exit(1)
     }, 2000)
 })
