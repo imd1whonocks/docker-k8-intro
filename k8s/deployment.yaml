@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-deployment
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      name: my-node-pod
+  template:
+    metadata:
+      labels:
+        name: my-node-pod
+    spec:
+      containers:
+      - name: my-node-app
+        image: imd1whonocks/sample-node-app:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
