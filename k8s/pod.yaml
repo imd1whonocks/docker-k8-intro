@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-node-pod
+spec:
+  containers:
+    - name: my-node-app
+      image: imd1whonocks/sample-node-app:v1
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+      - containerPort: 8080
